@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void readFile(std::string filename) {
+void ReadFile::readsfiles(std::string filename) {
     
 
     ifstream file(filename);
@@ -23,5 +23,6 @@ void readFile(std::string filename) {
         sequence += line;
     }
 
-    cout << "Sequence: " << sequence << endl;
+    // cout << "Sequence: " << sequence << endl;
+    extracted_sequence = sequence;
 }

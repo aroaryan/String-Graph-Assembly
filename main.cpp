@@ -12,7 +12,8 @@ int main() {
     getline(cin, filename);
 
 
-    readFile(filename);
+    ReadFile data;
+    data.readsfiles(filename);
 
     
     
