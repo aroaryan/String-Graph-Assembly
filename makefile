@@ -5,10 +5,10 @@ CXXFLAGS=-std=c++20 -gdwarf-4 -fstandalone-debug -Wall -Wextra -Werror -pedantic
 exec: bin/exec
 tests: bin/tests
 
-bin/exec: ./main.cpp ./readFile.cpp 
+bin/exec: ./main.cpp ./code/readFile.cpp ./code/debruijn.cpp ./code/fmindex.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-bin/tests: ./main.cpp ./readFile.cpp 
+bin/tests: ./tests.cpp ./code/readFile.cpp ./code/debruijn.cpp ./code/fmindex.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 .DEFAULT_GOAL := tests
