@@ -1,4 +1,4 @@
-#include "readFile.h"
+#include "./readFile.h"
 
 using namespace std;
 
