@@ -8,7 +8,7 @@ tests: bin/tests
 bin/exec: ./main.cpp ./code/readFile.cpp ./code/debruijn.cpp ./code/fmindex.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-bin/tests: ./tests.cpp ./code/readFile.cpp ./code/debruijn.cpp ./code/fmindex.cpp
+bin/tests: ./tests/test.cpp ./code/readFile.cpp ./code/debruijn.cpp ./code/fmindex.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 .DEFAULT_GOAL := tests

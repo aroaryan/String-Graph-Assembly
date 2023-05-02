@@ -20,7 +20,7 @@ int main() {
     DeBruijnGraph dbg;
     dbg.chopString(kmer_length, filename);
 
-    dbg.createGraph();
+    dbg.createGraph(); 
     
 
 

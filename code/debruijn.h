@@ -26,18 +26,13 @@ struct Edge {
 
 
 
-
-
-
-
 class DeBruijnGraph {
     public :
     std::vector<string> kmers;
-    // std::
-    // std::vector<Node> graph;
+
     std::unordered_map<std::string, Node> graph;
     void chopString(int kmer_length, string fname);
     void createGraph();
-    // void 
-    // void 
+    void formatGraph(); // Only to be used on the big file.
+
 };
