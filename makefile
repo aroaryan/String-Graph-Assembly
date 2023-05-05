@@ -5,7 +5,7 @@ CXXFLAGS=-std=c++20 -gdwarf-4 -fstandalone-debug -Wall -Wextra -Werror -pedantic
 exec: bin/exec
 tests: bin/tests
 
-bin/exec: ./main.cpp ./code/readFile.cpp ./code/debruijn.cpp 
+bin/exec: ./main.cpp ./code/readFile.cpp ./code/debruijn.cpp ./code/needleman_wunsch.cc
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 bin/tests: ./tests/test.cpp ./code/readFile.cpp ./code/debruijn.cpp 
