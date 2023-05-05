@@ -21,6 +21,12 @@ int main() {
     dbg.chopString(kmer_length, filename);
 
     dbg.createGraph(); 
+
+    std::cout << "GRAPH CREATED \n";
+
+    dbg.formatGraph(); 
+
+    dbg.outputGraph();
     
 
 
