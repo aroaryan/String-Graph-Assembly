@@ -1,0 +1,11 @@
+Node: AAAA 	Edges: 
+ Outgoing Edge: AAAA Weight: 24
+ Outgoing Edge: AAAC Weight: 2
+Node: AAAC 	Edges: 
+ Outgoing Edge: AACA Weight: 2
+Node: AACA 	Edges: 
+ Outgoing Edge: ACAA Weight: 2
+Node: ACAA 	Edges: 
+ Outgoing Edge: CAAA Weight: 2
+Node: CAAA 	Edges: 
+ Outgoing Edge: AAAA Weight: 2

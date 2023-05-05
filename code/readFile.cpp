@@ -14,6 +14,7 @@ void ReadFile::readsfiles(std::string filename) {
 
     string line;
     string sequence = "";
+    // size_t i = 0;
     while (getline(file, line)) {
         // ignore header line(s) starting with ">"
         if (line[0] == '@') {
@@ -21,7 +22,12 @@ void ReadFile::readsfiles(std::string filename) {
         }
         // cout << line << "\n";
         sequence += line;
+
+        // std::cout << i << "\n";
+        // i++;
     }
+
+    std::cout << "File Extracted \n";
 
     // cout << "Sequence: " << sequence << endl;
     extracted_sequence = sequence;

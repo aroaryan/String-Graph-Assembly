@@ -46,6 +46,24 @@ bool checkInvalidChar(std::string& extracted_sequence) {
     return true;
 }
 
+// bool checkNodeEqual(Node& input, Node& output) {
+//     REQUIRE(input.data == output.data);
+//     REQUIRE(input.outgoingEdges.size() == output.outgoingEdges.size());
+    
+
+//     // REQUIRE(input.outgoingEdges)
+
+// }
+
+// void test_graph(std::unordered_map<std::string, Node>& input_graph, std::vector<Node>& desired_output) {
+//     // REQUIRE(desired_output.size() == input_graph.size());
+
+//     // for(Node& n: desired_output) {
+//     //     REQUIRE(checkNodeEqual)
+//     // }
+//     // REQUIRE
+// }
+
 // bool 
 
 
@@ -165,7 +183,50 @@ TEST_CASE("DeBruijn - kmer extraction", "[K-Mer Size]") {
 
     //   REQUIRE_NOTHROW(DropDiskToBoard(student, DiskType::kPlayer1, 0));
     //   REQUIRE_THROWS_AS(DropDiskToBoard(student, DiskType::kPlayer1, -2), std::runtime_error);
+}
 
+TEST_CASE("DeBruijn - graph construction small", "[Graph Construction]") {
+
+    //All possible nodes : CA, AC, AA
+
+    //Repeats: 
+    //CA -> AA : 2
+    //AC -> AA : 2
+    //AA -> AA : 30
+    //AA -> AC : 2     
+
+
+    // Node AA = { .data = "AA" };
+    // Node AC = { .data = "AC" };
+    // Node CA = { .data = "CA" };
+
+    // Edge AAAA = {.incoming = AA, .outgoing = AA, .occurrences = 30};
+    // Edge AAAC = {.incoming = AA, .outgoing = AC, .occurrences = 2};
+    // Edge ACAA = {.incoming = AC, .outgoing = AA, .occurrences = 2};
+    // Edge CAAA = {.incoming = CA, .outgoing = AA, .occurrences = 2};
+
+    // AA.outgoingEdges.push_back(AAAA);
+    // AA.outgoingEdges.push_back(AAAC);
+    // AC.outgoingEdges.push_back(ACAA);
+    // CA.outgoingEdges.push_back(CAAA);
+
+    int test_kmer_size = 2;
+    std::string test_file =  "data/smallest.fasta";
+
+    DeBruijnGraph dbg;
+    dbg.chopString(test_kmer_size, test_file);
+    dbg.createGraph();
+
+    std::map<std::string, size_t> Nodes;
+    Nodes.insert({"AA", 2});
+    Nodes.insert({"AC", 1});
+    Nodes.insert({"CA", 1});
+
+    for(auto& keyval: dbg.graph) {
+        REQUIRE(keyval.second.outgoingEdges.size() == Nodes.at(keyval.first));
+    }
+
+    // REQUIRE(true == true);
 
 }
 

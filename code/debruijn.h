@@ -30,9 +30,11 @@ class DeBruijnGraph {
     public :
     std::vector<string> kmers;
 
-    std::unordered_map<std::string, Node> graph;
+    std::map<std::string, Node> graph;
     void chopString(int kmer_length, string fname);
     void createGraph();
     void formatGraph(); // Only to be used on the big file.
+    void outputGraph();
+    void traversal(); 
 
 };
