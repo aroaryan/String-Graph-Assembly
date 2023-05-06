@@ -27,6 +27,11 @@ int main() {
     dbg.formatGraph(); 
 
     dbg.outputGraph();
+
+    // dbg.traversal();
+    dbg.connectedComponents();
+
+    std::cout << dbg.longestSequence();
     
 
 
