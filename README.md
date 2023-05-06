@@ -14,6 +14,9 @@ All code files can be found in the `code/` directory. To run the code:
 3. Enter the data set to be used eg. `data/small.fasta`
 4. Enter the length of k-mers to be used eg. `7`
 
+
+There are a few test cases written to check the construction of the DeBruijnGraph and ReadFile method. `make tests` followed by `./bin/tests` can be used to test it. 
+
 ## Data
 
 Our data is originally sourced from the [SRA Archive](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR23718782&display=metadata) available for download [here.](https://drive.google.com/file/d/1bQzdZBxWnnvsWqbHEWomO4qhNrn9c9wh/view?usp=sharing)
@@ -26,7 +29,7 @@ The data files on this repo are subsets of the original file.
 
 ## Output
 
-The graph and the other data generated is also outputted to the9 `data/` directory. 
+The graph and the other data generated is also outputted to the `data/` directory. 
 On running the program `data/outputgraph.txt` is generated. 
 
 ## Documents

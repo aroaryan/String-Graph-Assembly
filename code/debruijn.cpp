@@ -178,7 +178,7 @@ void DeBruijnGraph::outputGraph() {
 
         
         outputFile.close();
-        std::cout << "Message saved to data/output.txt." << std::endl;
+        std::cout << "Graph saved to data/outputGraph.txt." << std::endl;
     }
     else {
         std::cout << "Unable to open output file." << std::endl;
@@ -217,15 +217,15 @@ void DeBruijnGraph::traversal() {
 
 
 void DeBruijnGraph::DFS(Node n, std::map<string, bool>& visited) {
-    std::cout << "DFS on Node : " << n.data << " \n";
+    // std::cout << "DFS on Node : " << n.data << " \n";
 
     visited.insert({n.data, true});
 
     for(Edge& e: n.outgoingEdges) {
         string outgoing = e.outgoing.data;
-        cout << "Outgoing Edges:" << e.outgoing.data<< "\n";
+        // cout << "Outgoing Edges:" << e.outgoing.data<< "\n";
         if(visited.count(outgoing) == 0 ) {
-            cout << "Calling for more DFS :" << e.outgoing.data<< "\n";
+            // cout << "Calling for more DFS :" << e.outgoing.data<< "\n";
             if(graph.count(e.outgoing.data) > 0) DFS(graph.at(e.outgoing.data), visited);
         }
     }
@@ -238,7 +238,7 @@ void DeBruijnGraph::connectedComponents() {
 
     while (itr != graph.end()) {
 
-        std::cout << "Current Node : " << (*itr).first << "\n";
+        // std::cout << "Current Node : " << (*itr).first << "\n";
 
         if(visited.count((*itr).first) == 0) {
             connected++;
@@ -262,7 +262,7 @@ void DeBruijnGraph::DFS(Node n, std::map<string, bool>& visited, std::string& lo
     for(Edge& e : n.outgoingEdges) {
         
         if(visited.count(e.outgoing.data) == 0) {
-            std::cout << e.outgoing.data << "\n";
+            // std::cout << e.outgoing.data << "\n";
             if(graph.count(e.outgoing.data) > 0) DFS(graph.at(e.outgoing.data), visited, long_sequence, current_sequence);
             else break;
         }
@@ -293,7 +293,7 @@ std::string DeBruijnGraph::longestSequence() {
 
 
     for(auto& keyval: graph) {
-        std::cout << keyval.first << "\n";
+        // std::cout << keyval.first << "\n";
             if(visited.count(keyval.first) == 0) {
                 DFS(keyval.second, visited, longest, current);
             }

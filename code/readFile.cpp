@@ -9,7 +9,6 @@ void ReadFile::readsfiles(std::string filename) {
     
     if (!file.is_open()) {
         cerr << "Error: could not open file " << filename << endl;
-        // 
     }
 
     string line;

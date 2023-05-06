@@ -14,9 +14,6 @@ class FMIndex
         
 
         FMIndex(std::string to_match, std::string alpha);
-
-
-
         std::vector<int> SuffixArray(std::string to_match);
 
 
@@ -42,6 +39,7 @@ class FMIndex
         std::string alpha; 
         std::vector<int> SA;
         std::vector<std::vector<int>> OT;
+
 
 };
 

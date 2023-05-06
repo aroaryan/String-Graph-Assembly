@@ -1,10 +1,5 @@
 #include "fmindex.h"
 
-/**
- * @file fmi.cpp
- * Code to constructiong and searching a FM Index
- */
-
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
@@ -227,3 +222,47 @@ std::vector<int> FMIndex::search(std::string sequence){
 
   return outList;
 }
+
+
+// std::vector<std::string> findMostRepeatedPatterns(const std::string& text, int n) {
+
+//   // FMIndex fmi = FMIndex(text, text);
+
+//     std::vector<std::string> lcs;
+//     for (int i = 0; i < bwt.length(); i++) {
+//         if (bwt[i] == '$') {
+//             continue;
+//         }
+//         int j = i;
+//         std::string substring = "";
+//         while (bwt[j] != '$') {
+//             substring += bwt[j];
+//             j = occ(bwt[j], j) + C[bwt[j]];
+//         }
+//         lcs.push_back(substring);
+//     }
+
+//     // count the frequency of each LCS using the FM-Index
+//     std::unordered_map<std::string, int> frequency;
+//     for (const auto& pattern : lcs) {
+//         int count = countOccurrences(pattern, fmIndex);
+//         if (count > 1) {
+//             frequency[pattern] = count;
+//         }
+//     }
+
+//     // sort the LCS by frequency
+//     std::vector<std::pair<std::string, int>> sortedPatterns(frequency.begin(), frequency.end());
+//     std::sort(sortedPatterns.begin(), sortedPatterns.end(), [](const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) {
+//         return a.second > b.second;
+//     });
+
+//     // output the top n most repeated patterns
+//     std::vector<std::string> mostRepeatedPatterns;
+//     for (int i = 0; i < n && i < sortedPatterns.size(); i++) {
+//         mostRepeatedPatterns.push_back(sortedPatterns[i].first);
+//         std::cout << sortedPatterns[i].first << ": " << sortedPatterns[i].second << std::endl;
+//     }
+
+//     return mostRepeatedPatterns;
+// }
